@@ -19,3 +19,7 @@ the base param with a new column.
 \description{
 \code{remove_preposicao_nomes} return names without de, da e dos.
 }
+\examples{
+   base <- data.frame(nome = c("João das Neves", "Pedro dos Anjos", "Maria das Gracas"))
+   base <- remove_preposicao_nomes(base, "nome")
+}

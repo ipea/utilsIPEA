@@ -11,6 +11,9 @@
 #' @importFrom stringr str_replace_all
 #' @return the base param with a new column.
 #'
+#' @examples
+#'    base <- data.frame(nome = c("João das Neves", "Pedro dos Anjos", "Maria das Gracas"))
+#'    base <- remove_preposicao_nomes(base, "nome")
 #' @export
 #'
 
