@@ -18,3 +18,4 @@ BugReports: http://github.com/ipea/utilsIPEA/issues/issues
 Imports:
     data.table,
     stringr
+Suggests: testthat
