@@ -1,4 +1,4 @@
 language: r
 cache: packages
-sudo: false
-warnings_are_errors: false
+sudo: required
+warnings_are_errors: true
