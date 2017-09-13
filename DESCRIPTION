@@ -1,6 +1,6 @@
 Package: utilsIPEA
 Type: Package
-Title: IPEA common functions
+Title: IPEA Common Functions
 Version: 0.0.1
 Authors@R: c(
     person("Gustavo","Coelho",      role=c("aut","cre"), email="gustavo.coelho@ipea.gov.br"),

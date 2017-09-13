@@ -3,9 +3,8 @@
 #' \code{remove_preposicao_nomes} return names without de, da e dos.
 #'
 #'
-#' @param base A data table or data frame.
-#' @param column Caracter, the column with the names.
-#' @param ... more columns for apply the function
+#' @param base A data table, data frame or character vector.
+#' @param ... columns for apply the function
 #'
 #' @import data.table
 #' @importFrom stringr str_replace_all
