@@ -5,7 +5,7 @@
 #' @param nome_casada Character, married woman's name
 #' @param nome_conjuge character, husband's name.
 #'
-#' @return Returns a character
+#' @return Returns a list of possible names
 #'
 #' @examples
 #'   nome_de_solteira(nome_casada = "Maria Conceicao da Costa", nome_conjuge = "Mario Silva da Costa")
@@ -13,19 +13,14 @@
 #'
 nome_de_solteira <- function(nome_casada, nome_conjuge){
 
+  nome_casada <- remove_preposicao_nomes(nome_casada)
+  nome_conjuge <- remove_preposicao_nomes(nome_conjuge)
   nome_separado_casada <- unlist(strsplit(nome_casada, "\\W+"))
   nome_separado_conjuge <- unlist(strsplit(nome_conjuge, "\\W+"))
+  nomes_presentes <- sapply(nome_separado_conjuge, function(sobrenome) any(nome_separado_casada == sobrenome))
+  sobrenome <- nome_separado_conjuge[nomes_presentes]
 
-  sobrenome <- nome_separado_conjuge[length(nome_separado_conjuge)]
-  if(any(nome_separado_casada %in% sobrenome)){
-    sobrenome_split <- nome_separado_casada[!(nome_separado_casada %in% sobrenome)]
-    print(sobrenome_split)
-  } else {
-    sobrenome <- nome_separado_conjuge[(length(nome_separado_conjuge)-1)]
-    sobrenome_split <- nome_separado_casada[!(nome_separado_casada %in% sobrenome)]
-    print(sobrenome_split)
-  }
+  sobrenome_split <- lapply(sobrenome, function(x) nome_separado_casada[!(nome_separado_casada %in% x)])
 
-
-  return(paste(sobrenome_split, collapse = " "))
+  return(lapply(sobrenome_split, function(x) paste(x, collapse = " ")))
 }

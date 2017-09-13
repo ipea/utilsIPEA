@@ -18,13 +18,15 @@
 #'
 
 # retira "DE" "DA" e "DOS" dos nomes
-remove_preposicao_nomes <- function(base, column, ...){
-  other_columns <- unlist(eval(substitute(alist(...))))
+remove_preposicao_nomes <- function(base, ...){
   subs <- " DA | DE | DOS | D. | DAS | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | X | Z"
   subs <- paste(subs, tolower(subs), sep = "|")
-  stopifnot(is.character(column))
+  if(is.character(base)){
+    return(str_replace_all(base, subs, " "))
+  }
+  other_columns <- unlist(eval(substitute(alist(...))))
+  stopifnot(length(other_columns) > 0)
   if(!is.data.table(base)){ setDT(base) }
-  other_columns <- c(column, other_columns)
   new_columns <- sapply(other_columns, function(x) paste0(x,"_semD"))
   mapply( function(x, y){ set(base, j = x, value = str_replace_all(base[[y]], subs, " ")) },
         new_columns, other_columns)
