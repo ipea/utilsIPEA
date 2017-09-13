@@ -4,14 +4,12 @@
 \alias{remove_preposicao_nomes}
 \title{Remove de da e dos of names .}
 \usage{
-remove_preposicao_nomes(base, column, ...)
+remove_preposicao_nomes(base, ...)
 }
 \arguments{
-\item{base}{A data table or data frame.}
+\item{base}{A data table, data frame or character vector.}
 
-\item{column}{Caracter, the column with the names.}
-
-\item{...}{more columns for apply the function}
+\item{...}{columns for apply the function}
 }
 \value{
 the base param with a new column.

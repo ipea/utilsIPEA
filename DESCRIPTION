@@ -1,10 +1,11 @@
 Package: utilsIPEA
 Type: Package
-Title: IPEA common functions
+Title: IPEA Common Functions
 Version: 0.0.1
 Authors@R: c(
     person("Gustavo","Coelho",      role=c("aut","cre"), email="gustavo.coelho@ipea.gov.br"),
-    person("Lucas","Mation",      role=c("aut"), email="lucas.mation@ipea.gov.br")
+    person("Lucas","Mation",      role=c("aut"), email="lucas.mation@ipea.gov.br"),
+    person("Daniel","Lima",      role=c("ctb"), email="daniel.viegas@ipea.gov.br")
     )
 Maintainer: Gustavo Coelho <gustavo.coelho@ipea.gov.br>
 Description: The most used functions on IPEA(Instituto de Pesquisa Economica Aplicada). Its aim is 
