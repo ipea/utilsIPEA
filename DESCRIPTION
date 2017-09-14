@@ -8,8 +8,9 @@ Authors@R: c(
     person("Daniel","Lima",      role=c("ctb"), email="daniel.viegas@ipea.gov.br")
     )
 Maintainer: Gustavo Coelho <gustavo.coelho@ipea.gov.br>
-Description: The most used functions on IPEA(Instituto de Pesquisa Economica Aplicada). Its aim is 
-             to put together reusable codes developed at the institute. 
+Description: The most used functions on IPEA(Instituto de Pesquisa Economica Aplicada). 
+             Most of functions deal with brazilian names. 
+             It can guess the women single's name, extract prepositions or extract the first name.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
