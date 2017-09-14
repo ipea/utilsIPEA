@@ -7,6 +7,7 @@
 #' @param sexo If TRUE, the list of gender based on the names is returned.
 #'
 #' @import data.table stringr
+#' @importFrom utils data
 #' @return Returns a data.table
 #'
 #' @examples
@@ -19,9 +20,10 @@ extrai_NomeProprio <- function(x, sobrenome = FALSE, sexo = FALSE){
   nome <- NULL
   tres_primeiros <- NULL
   . <- NULL
+  base_nomes <- NULL
   #Carrega bases necessárias e variáveis--------------------------
-  base_nomes <- system.file("extdata", "base_nomes.csv", package = "utilsIPEA")
-  base_nomes <- fread(base_nomes)
+  data("base_nomes", envir = environment())
+  #str(base_nomes)
   patternOneName <- "^[a-zA-Z0-9_]+"
   patternTwoNames <- "^[a-zA-Z0-9_]+\\s[a-zA-Z0-9_]+"
   patternThreeNames <- "^[a-zA-Z0-9_]+\\s[a-zA-Z0-9_]+\\s[a-zA-Z0-9_]+"
