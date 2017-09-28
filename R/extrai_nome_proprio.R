@@ -13,8 +13,21 @@
 #' @examples
 #'   extrai_NomeProprio(x = c("Maria Conceicao da Costa", "Mario Silva"), sobrenome = TRUE)
 #' @export
-#'
 extrai_NomeProprio <- function(x, sobrenome = FALSE, sexo = FALSE){
+  if(file.exists("src/base_nomes.csv")){
+    extrai_NomeProprio_(x = x, sobrenome = sobrenome, sexo = sexo)
+  } else {
+    print("Downloading data...")
+    require(RCurl)
+    url_base <- RCurl::getURL("https://gist.githubusercontent.com/igornoberto/a7e03289632f80dd05027c01f36a851d/raw/1d5cdffadadfa7f1c342eff06584ad428c10b734/base_nomes.csv")
+    write.table(url_base,"data/names_gender.csv", sep = ",", quote = FALSE)
+    extrai_NomeProprio_(x = x, sobrenome = sobrenome, sexo = sexo)
+  }
+}
+
+
+
+extrai_NomeProprio_ <- function(x, sobrenome = FALSE, sexo = FALSE){
   NomeProprio <- NULL
   dois_primeiros <- NULL
   nome <- NULL
@@ -22,8 +35,9 @@ extrai_NomeProprio <- function(x, sobrenome = FALSE, sexo = FALSE){
   . <- NULL
   base_nomes <- NULL
   #Carrega bases necessárias e variáveis--------------------------
-  data("base_nomes", envir = environment())
+  #data("base_nomes", envir = environment())
   #str(base_nomes)
+  base_nomes <- fread("data/names_gender.csv")
   patternOneName <- "^[a-zA-Z0-9_]+"
   patternTwoNames <- "^[a-zA-Z0-9_]+\\s[a-zA-Z0-9_]+"
   patternThreeNames <- "^[a-zA-Z0-9_]+\\s[a-zA-Z0-9_]+\\s[a-zA-Z0-9_]+"
@@ -48,3 +62,5 @@ extrai_NomeProprio <- function(x, sobrenome = FALSE, sexo = FALSE){
   names <- names[,-"tres_primeiros"]
   return(names)
 }
+
+
