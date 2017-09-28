@@ -14,7 +14,7 @@
 #'   extrai_NomeProprio(x = c("Maria Conceicao da Costa", "Mario Silva"), sobrenome = TRUE)
 #' @export
 extrai_NomeProprio <- function(x, sobrenome = FALSE, sexo = FALSE){
-  if(file.exists("src/names_gender.csv")){
+  if(file.exists("data/names_gender.csv")){
     extrai_NomeProprio_(x = x, sobrenome = sobrenome, sexo = sexo)
   } else {
     print("Downloading data...")
