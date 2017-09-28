@@ -14,7 +14,7 @@
 #'   extrai_NomeProprio(x = c("Maria Conceicao da Costa", "Mario Silva"), sobrenome = TRUE)
 #' @export
 extrai_NomeProprio <- function(x, sobrenome = FALSE, sexo = FALSE){
-  if(file.exists("src/base_nomes.csv")){
+  if(file.exists("data/names_gender.csv")){
     extrai_NomeProprio_(x = x, sobrenome = sobrenome, sexo = sexo)
   } else {
     print("Downloading data...")
@@ -49,18 +49,16 @@ extrai_NomeProprio_ <- function(x, sobrenome = FALSE, sexo = FALSE){
   names[,dois_primeiros := str_extract(nome,patternTwoNames)]
   names[,tres_primeiros := str_extract(nome,patternThreeNames)]
 
-  names[, NomeProprio := ifelse(tres_primeiros %in% base_nomes$nome, tres_primeiros, ifelse(dois_primeiros %in% base_nomes$nome, dois_primeiros, str_extract(names$nome,patternOneName)))]
+  names[, NomeProprio := ifelse(tres_primeiros %in% base_nomes$V1, tres_primeiros, ifelse(dois_primeiros %in% base_nomes$V1, dois_primeiros, str_extract(names$nome,patternOneName)))]
 
   if (sobrenome == TRUE){
-    names[,sobrenome := str_trim(str_replace(nome, NomeProprio, ""))]
+    names[,sobrenome := str_trim(str_replace(V1, NomeProprio, ""))]
   }
   if (sexo == TRUE){
-    names[,sexo := base_nomes[NomeProprio,,on="nome"][,.(sexo)]]
+    names[,sexo := base_nomes[NomeProprio,,on="V1"][,.(V2)]]
 
   }
   names <- names[,-"dois_primeiros"]
   names <- names[,-"tres_primeiros"]
   return(names)
 }
-
-
