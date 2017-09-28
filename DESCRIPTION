@@ -21,5 +21,7 @@ Depends: R (>= 3.0)
 Imports:
     data.table,
     stringr,
-    utils
+    utils,
+    Rcpp
 Suggests: testthat
+LinkingTo: Rcpp, BH
