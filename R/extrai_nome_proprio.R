@@ -113,4 +113,3 @@ extrai_NomeProprio_ <- function(x, surname, gender, stringdist, spaces){
   return(as.data.frame(names))
 }
 
-
