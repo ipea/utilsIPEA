@@ -87,7 +87,7 @@ extrai_NomeProprio_ <- function(x, surname, gender, stringdist, spaces){
 
   if(surname == TRUE){
     names[,surname := ifelse(str_replace_all(NomeProprio," ","") == str_extract(nome,"^[A-Z]+"), str_replace(nome,"^[A-Z]+\\s",""),
-                               str_trim(str_replace(nome, NomeProprio, "")))]
+                             str_trim(str_replace(nome, NomeProprio, "")))]
   }
   if(gender == TRUE){
     names[,gender := base_nomes[NomeProprio,,on="V1"][,.(V2)]]

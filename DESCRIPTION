@@ -26,4 +26,7 @@ Imports:
     stringdist,
     RCurl
 Suggests: testthat,
-    covr
+    covr,
+    Rcpp,
+    BH
+LinkingTo: Rcpp, BH
