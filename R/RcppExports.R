@@ -27,6 +27,6 @@
 #' @importFrom Rcpp evalCpp
 #' @export
 caixa_ <- function(word, max = 20L) {
-    .Call('_utilsIPEA_caixa_', PACKAGE = 'utilsIPEA', word, max)
+    .Call('utilsIPEA_caixa_', PACKAGE = 'utilsIPEA', word, max)
 }
 

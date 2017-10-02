@@ -22,6 +22,7 @@ Imports:
     data.table,
     stringr,
     utils,
-    Rcpp
+    Rcpp,
+    stringdist
 Suggests: testthat
 LinkingTo: Rcpp, BH

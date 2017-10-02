@@ -7,7 +7,7 @@ using namespace Rcpp;
 
 // caixa_
 CharacterVector caixa_(CharacterVector word, int max);
-RcppExport SEXP _utilsIPEA_caixa_(SEXP wordSEXP, SEXP maxSEXP) {
+RcppExport SEXP utilsIPEA_caixa_(SEXP wordSEXP, SEXP maxSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -19,7 +19,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_utilsIPEA_caixa_", (DL_FUNC) &_utilsIPEA_caixa_, 2},
+    {"utilsIPEA_caixa_", (DL_FUNC) &utilsIPEA_caixa_, 2},
     {NULL, NULL, 0}
 };
 
