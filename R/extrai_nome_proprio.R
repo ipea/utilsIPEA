@@ -32,8 +32,8 @@ extrai_NomeProprio <- function(x, sobrenome = FALSE, sexo = FALSE, stringdist = 
 
 
 find_strdist <- function(um_primeiro,dois_primeiros,tres_primeiros){
-  require(stringdist)
-  #base_nomes <- fread("data/names_gender.csv")
+  suppressWarnings(require(stringdist))
+  base_nomes <- fread("data/names_gender.csv")
   pos <- amatch(c(um_primeiro,dois_primeiros,tres_primeiros),base_nomes$V1, method = "jw", maxDist = 0.07)
   pes1 <- stringdist(um_primeiro, base_nomes$V1[pos[1]], method = "jw")
   pes2 <- stringdist(dois_primeiros, base_nomes$V1[pos[2]], method = "jw")
@@ -55,7 +55,7 @@ extrai_NomeProprio_ <- function(x, sobrenome, sexo, stringdist, spaces){
   . <- NULL
   base_nomes <- NULL
   #Carrega bases necessárias e variáveis--------------------------
-  base_nomes <<- fread("data/names_gender.csv")
+  base_nomes <- fread("data/names_gender.csv")
   patternOneName <- "^[a-zA-Z0-9_]+"
   patternTwoNames <- "^[a-zA-Z0-9_]+\\s[a-zA-Z0-9_]+"
   patternThreeNames <- "^[a-zA-Z0-9_]+\\s[a-zA-Z0-9_]+\\s[a-zA-Z0-9_]+"
