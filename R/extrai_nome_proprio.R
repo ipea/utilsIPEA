@@ -96,10 +96,10 @@ extrai_NomeProprio_ <- function(x, surname, gender, stringdist, spaces){
     names[,surname := str_replace_all(surname," ","")]
   }
 
-  names <- names[,-"dois_primeiros"]
-  names <- names[,-"tres_primeiros"]
-  names <- names[,-"um_primeiro"]
-  names <- names[,-"nome"]
+  names[,dois_primeiros := NULL]
+  names[,tres_primeiros := NULL]
+  names[,um_primeiro := NULL]
+  names[,nome := NULL]
 
   if(surname == FALSE & gender == FALSE){
     return(names[,NomeProprio])
