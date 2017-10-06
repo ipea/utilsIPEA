@@ -1,4 +1,6 @@
-# utilsIPEA  [![Build Status](https://travis-ci.org/ipea/utilsIPEA.svg?branch=master)](https://travis-ci.org/ipea/utilsIPEA)
+# utilsIPEA  [![Build Status](https://travis-ci.org/ipea/utilsIPEA.svg?branch=master)](https://travis-ci.org/ipea/utilsIPEA) [![Cran](https://www.r-pkg.org/badges/version/utilsIPEA)](https://www.r-pkg.org/badges/version/utilsIPEA) [![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/utilsIPEA)](https://cranlogs.r-pkg.org/badges/grand-total/utilsIPEA)
+
+
 This package has the most common functions used at IPEA.
 
 ## Installation
