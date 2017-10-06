@@ -1,0 +1,44 @@
+[
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "K:/Igor N/WD/utilsIPEA/src/caixa.cpp",
+                "kind" : 6,
+                "line" : 24,
+                "name" : "is(int, char)",
+                "parent_name" : "",
+                "usr" : "c:@F@is#I#C#"
+            },
+            {
+                "column" : 8,
+                "file" : "K:/Igor N/WD/utilsIPEA/src/caixa.cpp",
+                "kind" : 6,
+                "line" : 28,
+                "name" : "substr(int, int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@substr#I#I#I#"
+            },
+            {
+                "column" : 8,
+                "file" : "K:/Igor N/WD/utilsIPEA/src/caixa.cpp",
+                "kind" : 6,
+                "line" : 55,
+                "name" : "caixa_single(int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@caixa_single#I#I#"
+            },
+            {
+                "column" : 17,
+                "file" : "K:/Igor N/WD/utilsIPEA/src/caixa.cpp",
+                "kind" : 6,
+                "line" : 559,
+                "name" : "caixa_(int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@caixa_#I#I#"
+            }
+        ],
+        "file" : "K:/Igor N/WD/utilsIPEA/src/caixa.cpp",
+        "file_last_write" : 1506631851
+    }
+]

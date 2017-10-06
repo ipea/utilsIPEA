@@ -1,0 +1,44 @@
+[
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "K:/Igor N/WD/utilsIPEA/src/caixa.cpp",
+                "kind" : 6,
+                "line" : 24,
+                "name" : "is(std::string, char)",
+                "parent_name" : "",
+                "usr" : "c:@F@is#$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#C#"
+            },
+            {
+                "column" : 8,
+                "file" : "K:/Igor N/WD/utilsIPEA/src/caixa.cpp",
+                "kind" : 6,
+                "line" : 28,
+                "name" : "substr(std::string, int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@substr#$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#I#I#"
+            },
+            {
+                "column" : 8,
+                "file" : "K:/Igor N/WD/utilsIPEA/src/caixa.cpp",
+                "kind" : 6,
+                "line" : 55,
+                "name" : "caixa_single(string, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@caixa_single#$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#I#"
+            },
+            {
+                "column" : 17,
+                "file" : "K:/Igor N/WD/utilsIPEA/src/caixa.cpp",
+                "kind" : 6,
+                "line" : 559,
+                "name" : "caixa_(CharacterVector, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@caixa_#$@N@Rcpp@C@Vector>#VI16#@N@Rcpp@CT>1#T@PreserveStorage#I#"
+            }
+        ],
+        "file" : "K:/Igor N/WD/utilsIPEA/src/caixa.cpp",
+        "file_last_write" : 1506631851
+    }
+]
