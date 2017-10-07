@@ -85,3 +85,39 @@ abrevia_nome_meio <- function(base, ..., suffixo = "_abrev"){
   return(funcao_generica(base, ..., suffixo = suffixo, FUN = abrevia_nomes_meio_coluna))
 
 }
+
+#' Remove commom treatment pronouns used in Brazil.
+#'
+#' \code{remove_pronome_tratamento} return names without treatment pronouns (Sra, Sr, Dr, etc).
+#'
+#'
+#' @param base A data table, data frame or character vector.
+#' @param ... columns for apply the function
+#'
+#' @import data.table, stringr, dplyr
+#' @return the base param with a new column.
+#'
+#' @examples
+#'    remove_pronome_tratamento("Dr. Fulano")
+#'    remove_pronome_tratamento("Exmo. Sr. Cicrano de Tal")
+#'
+#'    base <- data.table(nome = c("Ph.D Pedro dos Anjos", "Prof Maria das Gracas", "Pe. João das Neves"))
+#'    base <- remove_pronome_tratamento(base, "nome", suffixo = "_new_names")
+#'
+#' @export
+remove_pronome_tratamento <- function(base, ..., suffixo = "_sem_pron"){
+  return(funcao_generica(base, ..., suffixo = suffixo, FUN = remove_pronome_tratamento_coluna))
+}
+
+
+remove_pronome_tratamento_coluna <- function(nomes){
+  data("list_pronomes",envir = environment())
+  novos_nomes <- sapply(nomes, USE.NAMES = F, function(nome){
+    if(is.na(nome)){ return(nome) }
+    nome <- str_replace_all(nome, "\\s+"," ")
+    nome <- str_replace_all(toupper(nome),lista,"")
+    return(nome)
+  })
+  return(novos_nomes)
+}
+
