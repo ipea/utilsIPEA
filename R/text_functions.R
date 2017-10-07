@@ -103,7 +103,7 @@ abrevia_nome_meio <- function(base, ..., suffixo = "_abrev"){
 #'    remove_pronome_tratamento("Dr. Fulano")
 #'    remove_pronome_tratamento("Exmo. Sr. Cicrano de Tal")
 #'
-#'    base <- data.frame(nome = c("Ph.D Pedro dos Anjos", "Prof Maria das Gracas", "Pe. João das Neves"))
+#'    base <- data.frame(nome = c("Ph.D Pedro Anjos", "Prof Maria Gracas", "Pe. João"))
 #'    base <- remove_pronome_tratamento(base, "nome", suffixo = "_new_names")
 #'
 #' @export
