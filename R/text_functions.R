@@ -38,15 +38,13 @@ remove_preposicao_nomes <- function(base, ...){
 
 abrevia_nomes_meio_coluna<- function(nomes){
   novos_nomes <- sapply(nomes, USE.NAMES = F, function(nome){
-    first<- str_extract(nome, "^[A-Z-a-z]+(?=\\s)")
-    last<- str_extract(nome, "[A-Z-a-z]+$")
-    mid <- str_trim(str_replace_all(nome, "^[A-Z-a-z]+|[A-Z-a-z]+$",""))
-    mid<- ifelse(is.na(mid),"",mid) %>%
-      str_trim() %>%
-      str_extract_all("^[A-Z-a-z]|\\s[A-Z-a-z]", simplify = T) %>%
-      str_trim() %>%
-      paste(collapse = " ")
-    nome_corrigido<- paste(first,mid,last, sep = " ") %>% str_replace_all("\\s+"," ")
+    nomes_separados <- str_extract_all(nome, "(\\w+)", simplify = T)
+    if(length(nomes_separados) <= 2) return(nome)
+    n <- length(nomes_separados) - 1
+    for(i in 2:n){
+      nomes_separados[i] <- str_extract(nomes_separados[i], "^\\w{1}")
+    }
+    nome_corrigido<- paste(nomes_separados, collapse = " ")
     return(nome_corrigido)
   } )
   return(novos_nomes)
