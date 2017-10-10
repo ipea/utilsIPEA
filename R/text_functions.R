@@ -8,7 +8,7 @@
 #'
 #' @import data.table
 #' @importFrom stringr str_replace_all
-#' @return the base param with a new column.
+#' @return the base parameter with a new column.
 #'
 #' @examples
 #'    base <- data.frame(nome = c("João das Neves", "Pedro dos Anjos", "Maria das Gracas"))
@@ -74,15 +74,16 @@ funcao_generica <- function(base, ..., suffixo, FUN){
 #'
 #'
 #' @param base A data table, data frame or character vector.
+#' @param suffixo A character indicating the final part of the new columns' names
 #' @param ... columns for apply the function
 #'
 #' @import data.table
 #' @importFrom stringr str_replace_all
 #' @importFrom stringr str_extract
-#' @return the base param with a new column.
+#' @return the base parameter with a new column.
 #'
 #' @examples
-#'    base <- data.frame(nome = c("Jo?o Pereira Neves", "Pedro Aparecido Anjos", "Maria Joaquina Gracas"))
+#'    base <- data.frame(nome = c("Carlos Pereira Neves", "Pedro Aparecido Anjos"))
 #'    base <- remove_preposicao_nomes(base, "nome")
 #' @export
 #'
