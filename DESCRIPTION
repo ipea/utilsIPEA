@@ -23,4 +23,5 @@ Imports:
     data.table,
     stringr,
     utils
-Suggests: testthat
+Suggests: testthat,
+    covr
