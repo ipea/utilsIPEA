@@ -34,7 +34,6 @@ extrai_NomeProprio <- function(x, surname = FALSE, gender = FALSE, stringdist = 
 
 
 find_strdist <- function(um_primeiro,dois_primeiros,tres_primeiros,base_nomes){
-  suppressWarnings(require(stringdist))
   pos <- amatch(c(um_primeiro,dois_primeiros,tres_primeiros),base_nomes$V1, method = "jw", maxDist = 0.7)
   pes1 <- stringdist(um_primeiro, base_nomes$V1[pos[1]], method = "jw")
   pes2 <- stringdist(dois_primeiros, base_nomes$V1[pos[2]], method = "jw")
