@@ -8,7 +8,7 @@
 #' @param stringdist if TRUE, make a prediction based on the string distance of Jaro-Winkler between the source data and the input.
 #' @param spaces if TRUE, returns the names without spaces. If FALSE, it compress all the blank spaces.
 #'
-#' @import data.table
+#' @import data.table RCurl
 #' @importFrom stringdist stringdist
 #' @importFrom stringdist amatch
 #' @importFrom stringr str_extract

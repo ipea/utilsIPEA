@@ -23,6 +23,7 @@ Imports:
     data.table,
     stringr,
     utils,
-    stringdist
+    stringdist,
+    RCurl
 Suggests: testthat,
     covr
