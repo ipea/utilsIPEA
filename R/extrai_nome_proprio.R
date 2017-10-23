@@ -24,7 +24,7 @@ extrai_NomeProprio <- function(x, surname = FALSE, gender = FALSE, stringdist = 
     return((extrai_NomeProprio_(x = x, surname = surname, gender = gender, stringdist = stringdist, spaces = spaces)))
   } else {
     print("Downloading source data...")
-    require(RCurl)
+    #require(RCurl)
     url_base <- getURL("https://raw.githubusercontent.com/ipea/utilsIPEA/base_nomes/nomes.csv")
     dir.create(paste0(getwd(),"/data"))
     write.table(url_base,"data/names_gender.csv", sep = ",", quote = FALSE)
