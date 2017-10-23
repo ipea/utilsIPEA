@@ -2,6 +2,7 @@
 
 export(abrevia_nome_meio)
 export(extrai_NomeProprio)
+export(ident_erros_munic_galileo)
 export(nome_de_solteira)
 export(remove_preposicao_nomes)
 import(data.table)
