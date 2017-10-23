@@ -18,8 +18,6 @@
 #' @importFrom utils data
 #' @return Returns a data.table
 #'
-#' @examples
-#'   extrai_NomeProprio(c("Maria Conceicao da Costa", "Mario Silva"), surname = TRUE)
 #' @export
 extrai_NomeProprio <- function(x, surname = FALSE, gender = FALSE, stringdist = TRUE, spaces = TRUE){
   if(file.exists("data/names_gender.csv")){
