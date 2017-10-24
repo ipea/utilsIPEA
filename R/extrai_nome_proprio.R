@@ -16,6 +16,7 @@
 #' @importFrom stringr str_replace_all
 #' @importFrom stringr str_replace
 #' @importFrom utils data
+#' @importFrom utils write.table
 #' @return Returns a data.table
 #'
 #' @export
@@ -55,7 +56,7 @@ extrai_NomeProprio_ <- function(x, surname, gender, stringdist, spaces){
   nome <- NULL
   . <- NULL
   base_nomes <- NULL
-
+  V2 <- NULL
   #Carrega bases necessárias e variáveis--------------------------
   base_nomes <- suppressMessages(fread("data/names_gender.csv"))
   patternOneName <- "^[a-zA-Z0-9_]+"
