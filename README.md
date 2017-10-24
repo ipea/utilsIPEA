@@ -27,7 +27,6 @@ To do it on RStudio just click on Tools >> Shell. On the new opened window type 
 After adding the new code and [**tests**](http://r-pkgs.had.co.nz/tests.html#test-tests) commit the changes to the git repository and check on [travis](https://travis-ci.org/ipea/utilsIPEA) 
 if it has been build correctly. 
 
-Now, the code is ready to be incorporated to master branch. To do so, a [pull request](https://help.github.com/articles/about-pull-requests/) has to be made to branch master. 
-
+Now, the code is ready to be incorporated to master branch. To do so, a [pull request](https://help.github.com/articles/about-pull-requests/) has to be made to branch dev. The branch dev contains all code that is not released on CRAN.  
 
 
