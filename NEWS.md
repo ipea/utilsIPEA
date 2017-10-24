@@ -1,10 +1,10 @@
-# utilsIPEA 0.0.4
+### Changes in 0.0.4
 
-* Added a `NEWS.md` file to track changes to the package.
+#### Improvements
 
 1. Refac extrai_nome_proprio
 
-### Changes in v0.0.3  ( in development )
+### Changes in v0.0.3
 
 #### Improvements
 
