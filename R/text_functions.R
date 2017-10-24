@@ -92,6 +92,7 @@ abrevia_nome_meio <- function(base, ..., suffixo = "_abrev"){
 #'
 #'
 #' @param base A data table, data frame or character vector.
+#' @param suffixo Name of the new column to be created.
 #' @param ... columns for apply the function
 #'
 #' @import data.table
