@@ -10,6 +10,8 @@ remove_pronome_tratamento(base, ..., suffixo = "_sem_pron")
 \item{base}{A data table, data frame or character vector.}
 
 \item{...}{columns for apply the function}
+
+\item{suffixo}{Name of the new column to be created.}
 }
 \value{
 the base param with a new column.
