@@ -22,5 +22,5 @@ Returns a new column called munmatch with true or false.
 \code{ident_erros_munic_galileo} Returns a new column called munmatch with true or false. This column identify where GALILEO failed
 }
 \examples{
-  nome_de_solteira(nome_casada = "Maria Conceicao da Costa", nome_conjuge = "Mario Silva da Costa")
+  ident_erros_munic_galileo(base = rais2015, mun= rais2015$municipio,match= rais2015$MatchAdress , uf= rais2015$uf)
 }

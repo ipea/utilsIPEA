@@ -11,7 +11,8 @@
 #' @return Returns a new column called munmatch with true or false.
 #'
 #' @examples
-#'   ident_erros_munic_galileo(base = rais2015, mun= rais2015$municipio,match= rais2015$MatchAdress , uf= rais2015$uf)
+#'   base <- data(geocod_base)
+#'   ident_erros_munic_galileo(base = base, mun= base$Nome_Municipio,match= base$MatchedAddress , uf= base$uf)
 #' @export
 #'
 ident_erros_munic_galileo <- function(base,mun,match,uf){
@@ -20,6 +21,11 @@ ident_erros_munic_galileo <- function(base,mun,match,uf){
   match<-as.character(match)
   Encoding(mun)<-"latin1"
   Encoding(match)<-"latin1"
+  ufnovo <- NULL
+  cepmatch <- NULL
+  munstr <- NULL
+  matchstr <- NULL
+  munmatch <- NULL
   base[,ufnovo:=uf %>% iconv(to="ASCII//TRANSLIT", from = "latin1") %>% toupper() %>% str_replace_all(fixed("'"), "") %>% str_replace_all("D.(S||)\\b", "") %>%
          str_replace_all("[IY]","I") %>% str_replace_all("[ZS]","S") %>% str_replace_all("[JG]","G")]
   base[,cepmatch:=str_detect(match,",\\s[0-9]{5}")]
