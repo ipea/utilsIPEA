@@ -113,12 +113,13 @@ remove_pronome_tratamento <- function(base, ..., suffixo = "_sem_pron"){
 
 
 remove_pronome_tratamento_coluna <- function(nomes){
+  lista <- NULL
   data("list_pronomes",envir = environment())
   novos_nomes <- sapply(nomes, USE.NAMES = F, function(nome){
     if(is.na(nome)){ return(nome) }
-    nome <- str_replace_all(nome, "\\s+"," ")
-    nome <- str_replace_all(toupper(nome),lista,"")
-    return(nome)
+      nome <- str_replace_all(nome, "\\s+"," ")
+      nome <- str_replace_all(toupper(nome),lista,"")
+      return(nome)
   })
   return(novos_nomes)
 }
