@@ -10,17 +10,14 @@
 #'
 #' @return Returns a new column called munmatch with true or false.
 #'
-#' @examples
-#'   base <- data(geocod_base)
-#'   ident_erros_munic_galileo(base = base, mun= base$Nome_Municipio,match= base$MatchedAddress , uf= base$uf)
 #' @export
 #'
-ident_erros_munic_galileo <- function(base,mun,match,uf){
-  base<-as.data.table(base)
-  mun<-as.character(mun)
-  match<-as.character(match)
-  Encoding(mun)<-"latin1"
-  Encoding(match)<-"latin1"
+ident_erros_munic_galileo <- function(base, mun, match, uf){
+  base <- as.data.table(base)
+  mun <- as.character(mun)
+  match <- as.character(match)
+  Encoding(mun) <- "latin1"
+  Encoding(match) <- "latin1"
   ufnovo <- NULL
   cepmatch <- NULL
   munstr <- NULL

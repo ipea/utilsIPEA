@@ -21,6 +21,3 @@ Returns a new column called munmatch with true or false.
 \description{
 \code{ident_erros_munic_galileo} Returns a new column called munmatch with true or false. This column identify where GALILEO failed
 }
-\examples{
-  ident_erros_munic_galileo(base = rais2015, mun= rais2015$municipio,match= rais2015$MatchAdress , uf= rais2015$uf)
-}
