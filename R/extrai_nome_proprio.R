@@ -21,7 +21,6 @@
 #'
 #' @export
 extrai_NomeProprio <- function(x, surname = FALSE, gender = FALSE, stringdist = TRUE, spaces = TRUE){
-  dir_base <- file.path(find.package("utilsIPEA"),"data")
   dir_base <- file.path(str_replace_all(find.package("utilsIPEA"),"\\\\","/"),"data")
   if(file.exists(file.path(dir_base,"name_gender.csv"))){
     return(extrai_NomeProprio_(x = x, surname = surname, gender = gender, stringdist = stringdist, spaces = spaces, dir_base = dir_base))
@@ -60,7 +59,7 @@ extrai_NomeProprio_ <- function(x, surname, gender, stringdist, spaces, dir_base
   V2 <- NULL
   #Carrega bases necessárias e variáveis--------------------------
   #base_nomes <- suppressMessages(fread("data/names_gender.csv"))
-  base_nomes <- suppressMessages(fread(file.path(dir_base,"names_gender.csv")))
+  base_nomes <- suppressMessages(fread(file.path(dir_base,"name_gender.csv")))
   patternOneName <- "^[a-zA-Z0-9_]+"
   patternTwoNames <- "^[a-zA-Z0-9_]+\\s[a-zA-Z0-9_]+"
   patternThreeNames <- "^[a-zA-Z0-9_]+\\s[a-zA-Z0-9_]+\\s[a-zA-Z0-9_]+"
