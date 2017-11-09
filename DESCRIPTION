@@ -1,7 +1,7 @@
 Package: utilsIPEA
 Type: Package
 Title: IPEA Common Functions
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: c(
     person("Gustavo","Coelho", role=c("aut","cre"), email="gustavo.coelho@ipea.gov.br"),
     person("Lucas","Mation", role=c("aut"), email="lucas.mation@ipea.gov.br"),
@@ -23,6 +23,8 @@ Depends: R (>= 3.0)
 Imports:
     data.table,
     stringr,
-    utils
+    utils,
+    stringdist,
+    RCurl
 Suggests: testthat,
     covr
