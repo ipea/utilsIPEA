@@ -2,7 +2,8 @@
 #'
 #' \code{ident_erros_munic_galileo} Returns a new column called munmatch with true or false. This column identify where GALILEO failed
 #'
-#' @importFrom stringr str_replace_all
+#' @importFrom stringr str_replace_all str_detect str_count fixed
+#' @importFrom dplyr %>%
 #' @param base Data frame, data set with return from GALILEO
 #' @param mun character, the name of the municipio.
 #' @param match character, the colum MatchAdress from GALILEO.
