@@ -16,6 +16,6 @@
 geocod_base
 }
 \description{
-Some addresses from brazil
+Some addresses from Brazil
 }
 \keyword{datasets}

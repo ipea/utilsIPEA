@@ -1,6 +1,6 @@
 #' Brazilian address
 #'
-#' Some addresses from brazil
+#' Some addresses from Brazil
 #'
 #' @format A data frame with 5 rows and 12 variables:
 #' \describe{
