@@ -44,20 +44,22 @@ abrevia_nomes_meio_coluna<- function(nomes){
 }
 
 
-funcao_generica <- function(base, ..., suffixo, FUN){
+funcao_generica <- function(base, ..., suffixo, FUN, spark_conn){
   FUN <- match.fun(FUN)
   if(is.character(base)){
+    if(!is.null(spark_conn)){ return(FUN(base,spark_conn)) }
     return(FUN(base))
   }
   other_columns <- unlist(eval(substitute(alist(...))))
   stopifnot(length(other_columns) > 0)
   if(!is.data.table(base)){ setDT(base) }
   new_columns <- sapply(other_columns, function(x) paste0(x, suffixo))
-  mapply( function(x, y){ set(base, j = x, value = FUN(base[[y]])) },
-          new_columns, other_columns)
-
+  if(!is.null(spark_conn)){
+    mapply( function(x, y){ set(base, j = x, value = FUN(base[[y]],spark_conn)) }, new_columns, other_columns)
+  } else {
+    mapply( function(x, y){ set(base, j = x, value = FUN(base[[y]])) }, new_columns, other_columns)
+  }
   return(base)
-
 }
 
 
@@ -94,8 +96,9 @@ abrevia_nome_meio <- function(base, ..., suffixo = "_abrev"){
 #' @param base A data table, data frame or character vector.
 #' @param suffixo Name of the new column to be created.
 #' @param ... columns for apply the function
+#' @param spark_conn A character with the spark's connection name. For NULL, it runs locally.
 #'
-#' @import data.table
+#' @import data.table sparklyr dplyr
 #' @importFrom stringr str_replace_all
 #' @return the base param with a new column.
 #'
@@ -107,8 +110,13 @@ abrevia_nome_meio <- function(base, ..., suffixo = "_abrev"){
 #'    base <- remove_pronome_tratamento(base, "nome", suffixo = "_new_names")
 #'
 #' @export
-remove_pronome_tratamento <- function(base, ..., suffixo = "_sem_pron"){
-  return(funcao_generica(base, ..., suffixo = suffixo, FUN = remove_pronome_tratamento_coluna))
+remove_pronome_tratamento <- function(base, ..., suffixo = "_sem_pron", spark_conn = NULL){
+  if(is.null(spark_conn)){
+    return(funcao_generica(base, ..., suffixo = suffixo, FUN = remove_pronome_tratamento_coluna, spark_conn = spark_conn))
+  } else{
+    return(funcao_generica(base, ..., suffixo = suffixo, FUN = remove_pronome_tratamento_coluna_spark, spark_conn = spark_conn))
+  }
+
 }
 
 
@@ -121,6 +129,19 @@ remove_pronome_tratamento_coluna <- function(nomes){
       nome <- str_replace_all(toupper(nome),lista,"")
       return(nome)
   })
+  return(novos_nomes)
+}
+
+
+remove_pronome_tratamento_coluna_spark <- function(nomes,spark_conn){
+  lista_spark <- NULL
+  data("list_pronomes_spark",envir = environment())
+  nomes <- data.table(nome = nomes)
+  nomes_tbl <- dplyr::copy_to(spark_conn,nomes,"nomes",overwrite = TRUE)
+  if(!("nomes" %in% src_tbls(spark_conn))){ stop("Unable to copy 'base' to Spark") }
+  nomes_tbl <- nomes_tbl %>% dplyr::summarise(nome = toupper(nome)) %>% dplyr::mutate(regex = regexp_replace(nome,lista_spark,""))
+  novos_nomes <- nomes_tbl %>% dplyr::select(regex) %>% dplyr::collect() %>% as.data.table()
+  dplyr::db_drop_table(spark_conn,"nomes")
   return(novos_nomes)
 }
 
