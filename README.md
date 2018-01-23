@@ -9,7 +9,11 @@ The package is on CRAN, so to install it just the command:
 
 ```{r eval=FALSE}
 install.packages("utilsIPEA") 
-````
+```
+
+## Change log
+
+The change log can be read on the [News](https://github.com/ipea/utilsIPEA/blob/master/NEWS.md)
 
 ## Contributing 
 
@@ -20,7 +24,7 @@ To create the new branch using git command line use the command:
 
 ```{r eval=FALSE}
 git checkout -b name_of_new_branch
-````
+```
 
 To do it on RStudio just click on Tools >> Shell. On the new opened window type the command above. 
 
