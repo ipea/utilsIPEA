@@ -11,3 +11,10 @@
 #'   \item{Nome_Municipio}{City names}
 #' }
 "geocod_base"
+
+#' Brazilian treatment pronouns
+#'
+#' A regex character with the most common Brazilian treatment pronouns used in Brazil
+#'
+#' @format Character
+"lista"
