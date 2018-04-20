@@ -11,7 +11,7 @@ contar_letras(base, columns, suffix = NULL)
 
 \item{columns}{for apply the function}
 
-\item{suffixo}{Suffix name for the new column.}
+\item{suffix}{Suffix name for the new column.}
 }
 \value{
 a data.table number of any latters on alphabet for each column

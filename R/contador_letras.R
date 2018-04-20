@@ -5,7 +5,7 @@
 #'
 #' @param base A data table, data frame or character vector.
 #' @param columns for apply the function
-#' @param suffixo Suffix name for the new column.
+#' @param suffix Suffix name for the new column.
 #'
 #' @import data.table
 #' @return a data.table number of any latters on alphabet for each column
