@@ -14,10 +14,10 @@ contar_letras(base, columns, suffix = NULL)
 \item{suffix}{Suffix name for the new column.}
 }
 \value{
-a data.table number of any latters on alphabet for each column
+a data.table number of any letters on alphabet for each column
 }
 \description{
-\code{contar_letras} return number of any latters on alphabet for each column.
+\code{contar_letras} return number of any letters on alphabet for each column.
 }
 \examples{
    base <- data.frame(nome = c("João das Neves", "Pedro dos Anjos", "Maria das Gracas"))

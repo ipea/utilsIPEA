@@ -1,6 +1,6 @@
 #' Remove de da e dos of names .
 #'
-#' \code{contar_letras} return number of any latters on alphabet for each column.
+#' \code{contar_letras} return number of any letters on alphabet for each column.
 #'
 #'
 #' @param base A data table, data frame or character vector.
@@ -8,7 +8,7 @@
 #' @param suffix Suffix name for the new column.
 #'
 #' @import data.table
-#' @return a data.table number of any latters on alphabet for each column
+#' @return a data.table number of any letters on alphabet for each column
 #'
 #' @examples
 #'    base <- data.frame(nome = c("João das Neves", "Pedro dos Anjos", "Maria das Gracas"))
